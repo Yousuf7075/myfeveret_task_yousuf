@@ -47,7 +47,17 @@ class _HomeScreenState extends State<HomeScreen> {
           }
           if (state is HomeLoaded) {
             return Container(
-              child: Text('${state.treadingSellers[0].length}'),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('trending seller length->${state.treadingSellers[0].length}'),
+                  Text('trending products length->${state.treadingProducts[0].length}'),
+                  Text('new arrivals length->${state.newArrivals[0].length}'),
+                  Text('new shops length->${state.newShops[0].length}'),
+                  Text('products length->${state.products[0].length}'),
+                ],
+              ),
             );
           }
           return Container(
