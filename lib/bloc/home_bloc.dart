@@ -23,8 +23,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> with ChangeNotifier {
         yield HomeLoading();
         try {
           var trendingSellerRp = await repository.getTrendingSellers();
-          treadingSellers = trendingSellerFromJson(trendingSellerRp.body);
-          print('trending seller-> ${trendingSellerRp.body}');
+          treadingSellers = trendingSellerFromJson(trendingSellerRp);
+          //print('trending seller-> ${trendingSellerRp.body}');
           yield HomeLoaded(treadingSellers: treadingSellers);
         } catch (e) {
           yield HomeError(errorMessage: e.toString());
