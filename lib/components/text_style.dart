@@ -14,8 +14,8 @@ TextStyle titleTextStyle() => GoogleFonts.poppins(
  );
 
  TextStyle productPriceTextStyle() => GoogleFonts.poppins(
-     fontWeight: FontWeight.w500,
-     fontSize: 12,
+     fontWeight: FontWeight.w400,
+     fontSize: 11,
      color: Colors.black
  );
 

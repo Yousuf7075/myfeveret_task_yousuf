@@ -23,8 +23,8 @@ class ProductCard extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 50,
-                    width: 50,
+                    height: 40,
+                    width: 40,
                     child: ClipOval(
                       child: populateNetworkImage(
                           imgUrl: productsRp.companyLogo != null
