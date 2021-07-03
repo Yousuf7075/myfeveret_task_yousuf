@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myfeveret_task_yousuf/components/common_widgets.dart';
-import 'package:myfeveret_task_yousuf/components/text_style.dart';
-import 'package:myfeveret_task_yousuf/models/products.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/products.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/product_card.dart';
 
 class ProductList extends StatelessWidget {

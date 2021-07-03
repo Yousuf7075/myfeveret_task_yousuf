@@ -15,10 +15,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0"
-  bloc:
+  screens.home.bloc:
     dependency: transitive
     description:
-      name: bloc
+      name: screens.home.bloc
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.0.0"

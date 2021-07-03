@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myfeveret_task_yousuf/bloc/home_bloc.dart';
-import 'package:myfeveret_task_yousuf/repository/home_repository.dart';
+import 'package:myfeveret_task_yousuf/screens/home/bloc/home_bloc.dart';
 import 'package:myfeveret_task_yousuf/screens/home/home_screen.dart';
+import 'package:myfeveret_task_yousuf/screens/home/repository/home_repository.dart';
 import 'package:provider/provider.dart';
 
 void main() {

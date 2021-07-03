@@ -27,7 +27,6 @@ class HomeRepository {
 
       //-----------Loading from server----------
 
-      print("Loading from API");
       final response =
       await http.get(mUri, headers: headers);
       responseJson = _returnResponse(response);
@@ -37,8 +36,6 @@ class HomeRepository {
       //-----------Loading from cache----------
 
       if (file.existsSync()) {
-        print("Loading from cache");
-        print("cache-> ${file.readAsStringSync()}");
         responseJson = file.readAsStringSync();
       }else{
         print('No net');
@@ -49,7 +46,6 @@ class HomeRepository {
   }
 
   Future getTrendingProducts() async {
-    print("fetch trending products...");
 
     String fileName = "trending_products.json";
     var dir = await getTemporaryDirectory();
@@ -65,8 +61,6 @@ class HomeRepository {
     try {
 
       //-----------Loading from server----------
-
-      print("Loading from API");
       final response =
       await http.get(mUri, headers: headers);
       responseJson = _returnResponse(response);
@@ -76,8 +70,6 @@ class HomeRepository {
       //-----------Loading from cache----------
 
       if (file.existsSync()) {
-        print("Loading from cache");
-        print("cache-> ${file.readAsStringSync()}");
         responseJson = file.readAsStringSync();
       }else{
         print('No net');
@@ -88,7 +80,6 @@ class HomeRepository {
   }
 
   Future getNewArrivals() async {
-    print("fetch new arrivals...");
 
     String fileName = "new_arrivals.json";
     var dir = await getTemporaryDirectory();
@@ -105,7 +96,6 @@ class HomeRepository {
 
       //-----------Loading from server----------
 
-      print("Loading from API");
       final response =
       await http.get(mUri, headers: headers);
       responseJson = _returnResponse(response);
@@ -115,8 +105,6 @@ class HomeRepository {
       //-----------Loading from cache----------
 
       if (file.existsSync()) {
-        print("Loading from cache");
-        print("cache-> ${file.readAsStringSync()}");
         responseJson = file.readAsStringSync();
       }else{
         print('No net');
@@ -127,7 +115,6 @@ class HomeRepository {
   }
 
   Future getNewShops() async {
-    print("fetch new shops...");
 
     String fileName = "new_shops.json";
     var dir = await getTemporaryDirectory();
@@ -144,7 +131,6 @@ class HomeRepository {
 
       //-----------Loading from server----------
 
-      print("Loading from API");
       final response =
       await http.get(mUri, headers: headers);
       responseJson = _returnResponse(response);
@@ -154,8 +140,6 @@ class HomeRepository {
       //-----------Loading from cache----------
 
       if (file.existsSync()) {
-        print("Loading from cache");
-        print("cache-> ${file.readAsStringSync()}");
         responseJson = file.readAsStringSync();
       }else{
         print('No net');
@@ -166,7 +150,6 @@ class HomeRepository {
   }
 
   Future getProducts() async {
-    print("fetch products...");
 
     String fileName = "products.json";
     var dir = await getTemporaryDirectory();
@@ -183,7 +166,6 @@ class HomeRepository {
 
       //-----------Loading from server----------
 
-      print("Loading from API");
       final response =
       await http.get(mUri, headers: headers);
       responseJson = _returnResponse(response);
@@ -193,8 +175,6 @@ class HomeRepository {
       //-----------Loading from cache----------
 
       if (file.existsSync()) {
-        print("Loading from cache");
-        print("cache-> ${file.readAsStringSync()}");
         responseJson = file.readAsStringSync();
       }else{
         print('No net');
@@ -220,6 +200,6 @@ dynamic _returnResponse(http.Response response) {
     case 500:
     default:
       throw FetchDataException(
-          'Error occured while Communication with Server with StatusCode : ${response.statusCode}');
+          'Error occurred while Communication with Server with StatusCode : ${response.statusCode}');
   }
 }

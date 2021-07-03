@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myfeveret_task_yousuf/components/common_widgets.dart';
-import 'package:myfeveret_task_yousuf/models/trending_seller.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/trending_seller.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/title_text.dart';
 
 class TrendingSeller extends StatelessWidget {

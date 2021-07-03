@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myfeveret_task_yousuf/models/new_arrivals.dart';
-import 'package:myfeveret_task_yousuf/models/new_shops.dart';
-import 'package:myfeveret_task_yousuf/models/products.dart';
-import 'package:myfeveret_task_yousuf/models/trending_products.dart';
-import 'package:myfeveret_task_yousuf/models/trending_seller.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/new_arrivals.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/new_shops.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/products.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/trending_products.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/trending_seller.dart';
 
 @immutable
 abstract class HomeState {

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myfeveret_task_yousuf/bloc/home_bloc.dart';
-import 'package:myfeveret_task_yousuf/bloc/home_event.dart';
-import 'package:myfeveret_task_yousuf/bloc/home_state.dart';
+import 'package:myfeveret_task_yousuf/screens/home/bloc/home_bloc.dart';
+import 'package:myfeveret_task_yousuf/screens/home/bloc/home_event.dart';
+import 'package:myfeveret_task_yousuf/screens/home/bloc/home_state.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/product_list.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/new_arrivals.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/new_shops.dart';

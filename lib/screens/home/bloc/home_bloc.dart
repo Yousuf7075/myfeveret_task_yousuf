@@ -2,12 +2,12 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myfeveret_task_yousuf/models/new_arrivals.dart';
-import 'package:myfeveret_task_yousuf/models/new_shops.dart';
-import 'package:myfeveret_task_yousuf/models/products.dart';
-import 'package:myfeveret_task_yousuf/models/trending_products.dart';
-import 'package:myfeveret_task_yousuf/models/trending_seller.dart';
-import 'package:myfeveret_task_yousuf/repository/home_repository.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/new_arrivals.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/new_shops.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/products.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/trending_products.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/trending_seller.dart';
+import 'package:myfeveret_task_yousuf/screens/home/repository/home_repository.dart';
 import 'home_event.dart';
 import 'home_state.dart';
 
@@ -51,13 +51,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> with ChangeNotifier {
           //products
           var productsRp = await repository.getProducts();
           products = productsFromJson(productsRp);
-          print('three items-> ${products[0].length}');
           firstThreeProducts = getFirstThreeProducts(products);
           secondThreeProducts = getSecondThreeProducts(products);
           restOfTheProducts = getRestOfTheProducts(products);
-          print('three items-> ${firstThreeProducts.length}');
-          print('three items-> ${secondThreeProducts.length}');
-          print('three items-> ${restOfTheProducts.length}');
 
           yield HomeLoaded(
               treadingSellers: treadingSellers,

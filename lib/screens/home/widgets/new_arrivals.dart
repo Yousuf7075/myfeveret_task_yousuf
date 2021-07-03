@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myfeveret_task_yousuf/components/common_widgets.dart';
 import 'package:myfeveret_task_yousuf/components/text_style.dart';
-import 'package:myfeveret_task_yousuf/models/new_arrivals.dart';
+import 'package:myfeveret_task_yousuf/screens/home/models/new_arrivals.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/title_text.dart';
 
 class NewArrivals extends StatelessWidget {
