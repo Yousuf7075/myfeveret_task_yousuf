@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //Text('trending seller length->${state.treadingSellers[0].length}'),
-                  TrendingSeller(),
+                  TrendingSeller(trendingSellers: state.treadingSellers[0],),
                   SizedBox(height: 5,),
                   Text('trending products length->${state.treadingProducts[0].length}'),
                   Text('new arrivals length->${state.newArrivals[0].length}'),

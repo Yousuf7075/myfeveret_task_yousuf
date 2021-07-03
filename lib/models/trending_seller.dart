@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-List<List<TrendingSeller>> trendingSellerFromJson(String str) => List<List<TrendingSeller>>.from(json.decode(str).map((x) => List<TrendingSeller>.from(x.map((x) => TrendingSeller.fromJson(x)))));
+List<List<TrendingSellerRp>> trendingSellerFromJson(String str) => List<List<TrendingSellerRp>>.from(json.decode(str).map((x) => List<TrendingSellerRp>.from(x.map((x) => TrendingSellerRp.fromJson(x)))));
 
-String trendingSellerToJson(List<List<TrendingSeller>> data) => json.encode(List<dynamic>.from(data.map((x) => List<dynamic>.from(x.map((x) => x.toJson())))));
+String trendingSellerToJson(List<List<TrendingSellerRp>> data) => json.encode(List<dynamic>.from(data.map((x) => List<dynamic>.from(x.map((x) => x.toJson())))));
 
-class TrendingSeller {
-  TrendingSeller({
+class TrendingSellerRp {
+  TrendingSellerRp({
     this.slNo,
     this.sellerName,
     this.sellerProfilePhoto,
@@ -57,7 +57,7 @@ class TrendingSeller {
   DateTime lastAddToCart;
   DateTime lastAddToCartThatSold;
 
-  factory TrendingSeller.fromJson(Map<String, dynamic> json) => TrendingSeller(
+  factory TrendingSellerRp.fromJson(Map<String, dynamic> json) => TrendingSellerRp(
     slNo: json["slNo"] == null ? null : json["slNo"],
     sellerName: json["sellerName"] == null ? null : json["sellerName"],
     sellerProfilePhoto: json["sellerProfilePhoto"] == null ? null : json["sellerProfilePhoto"],

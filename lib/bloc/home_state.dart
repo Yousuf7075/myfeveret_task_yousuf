@@ -21,7 +21,7 @@ class HomeLoading extends HomeState {
 }
 
 class HomeLoaded extends HomeState {
-  final List<List<TrendingSeller>> treadingSellers;
+  final List<List<TrendingSellerRp>> treadingSellers;
   final List<List<TrendingProducts>> treadingProducts;
   final List<List<NewArrivals>> newArrivals;
   final List<List<NewShops>> newShops;

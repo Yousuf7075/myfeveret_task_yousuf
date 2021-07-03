@@ -13,7 +13,7 @@ import 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> with ChangeNotifier {
   HomeRepository repository = HomeRepository();
-  List<List<TrendingSeller>> treadingSellers;
+  List<List<TrendingSellerRp>> treadingSellers;
   List<List<TrendingProducts>> treadingProducts;
   List<List<NewArrivals>> newArrivals;
   List<List<NewShops>> newShops;
