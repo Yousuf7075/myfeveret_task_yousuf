@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_bloc.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_event.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_state.dart';
+import 'package:myfeveret_task_yousuf/screens/home/widgets/product_list.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/new_arrivals.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/new_shops.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/trending_products.dart';
@@ -60,9 +61,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 5,),
                     TrendingProducts(trendingProducts: state.treadingProducts[0],),
                     SizedBox(height: 5,),
+                    ProductList(products: state.firstThreeProducts,),
+                    SizedBox(height: 5,),
                     NewArrivals(newArrivals: state.newArrivals[0],),
                     SizedBox(height: 5,),
-                    NewShops(newShops: state.newShops[0],)
+                    ProductList(products: state.secondThreeProducts,),
+                    SizedBox(height: 5,),
+                    NewShops(newShops: state.newShops[0],),
+                    SizedBox(height: 5,),
+                    ProductList(products: state.restOfTheProducts,),
                   ],
                 ),
               ),

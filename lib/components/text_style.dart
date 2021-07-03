@@ -18,3 +18,21 @@ TextStyle titleTextStyle() => GoogleFonts.poppins(
      fontSize: 12,
      color: Colors.black
  );
+
+ TextStyle timerTextStyle() => GoogleFonts.poppins(
+     fontWeight: FontWeight.w500,
+     fontSize: 12,
+     color: Colors.black
+ );
+
+ TextStyle storyTextStyle() => GoogleFonts.poppins(
+     fontWeight: FontWeight.w400,
+     fontSize: 13,
+     color: Colors.black
+ );
+
+ TextStyle productCardTextStyle() => GoogleFonts.poppins(
+     fontWeight: FontWeight.bold,
+     fontSize: 12,
+     color: Colors.black
+ );

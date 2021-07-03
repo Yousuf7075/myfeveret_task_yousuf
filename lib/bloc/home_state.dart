@@ -25,18 +25,29 @@ class HomeLoaded extends HomeState {
   final List<List<TrendingProductsRp>> treadingProducts;
   final List<List<NewArrivalsRp>> newArrivals;
   final List<List<NewShopsRp>> newShops;
-  final List<List<Products>> products;
+  final List<ProductsRp> firstThreeProducts;
+  final List<ProductsRp> secondThreeProducts;
+  final List<ProductsRp> restOfTheProducts;
 
   HomeLoaded(
       {this.treadingSellers,
       this.treadingProducts,
       this.newArrivals,
       this.newShops,
-      this.products});
+      this.firstThreeProducts,
+      this.secondThreeProducts,
+      this.restOfTheProducts});
 
   @override
-  List<Object> get props =>
-      [treadingSellers, treadingProducts, newArrivals, newShops, products];
+  List<Object> get props => [
+        treadingSellers,
+        treadingProducts,
+        newArrivals,
+        newShops,
+        firstThreeProducts,
+        secondThreeProducts,
+        restOfTheProducts
+      ];
 }
 
 class HomeError extends HomeState {

@@ -17,7 +17,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> with ChangeNotifier {
   List<List<TrendingProductsRp>> treadingProducts;
   List<List<NewArrivalsRp>> newArrivals;
   List<List<NewShopsRp>> newShops;
-  List<List<Products>> products;
+  List<List<ProductsRp>> products;
+  List<ProductsRp> firstThreeProducts = [];
+  List<ProductsRp> secondThreeProducts = [];
+  List<ProductsRp> restOfTheProducts = [];
 
   HomeBloc({this.repository}) : super(HomeInitial());
 
@@ -48,18 +51,57 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> with ChangeNotifier {
           //products
           var productsRp = await repository.getProducts();
           products = productsFromJson(productsRp);
+          print('three items-> ${products[0].length}');
+          firstThreeProducts = getFirstThreeProducts(products);
+          secondThreeProducts = getSecondThreeProducts(products);
+          restOfTheProducts = getRestOfTheProducts(products);
+          print('three items-> ${firstThreeProducts.length}');
+          print('three items-> ${secondThreeProducts.length}');
+          print('three items-> ${restOfTheProducts.length}');
 
           yield HomeLoaded(
               treadingSellers: treadingSellers,
               treadingProducts: treadingProducts,
               newArrivals: newArrivals,
               newShops: newShops,
-              products: products);
+              firstThreeProducts: firstThreeProducts,
+              secondThreeProducts: secondThreeProducts,
+              restOfTheProducts: restOfTheProducts);
         } catch (e) {
           yield HomeError(errorMessage: e.toString());
           print(e);
         }
       }
     }
+  }
+
+  List<ProductsRp> getFirstThreeProducts(List<List<ProductsRp>> products) {
+    List<ProductsRp> firstThreeItems = [];
+    products[0].asMap().forEach((i, value) {
+      if(i < 3){
+        firstThreeItems.add(value);
+      }
+    });
+    return firstThreeItems;
+  }
+
+  List<ProductsRp> getSecondThreeProducts(List<List<ProductsRp>> products) {
+    List<ProductsRp> secondThreeItems = [];
+    products[0].asMap().forEach((i, value) {
+      if(i > 2 && i < 6) {
+        secondThreeItems.add(value);
+      }
+    });
+    return secondThreeItems;
+  }
+
+  List<ProductsRp> getRestOfTheProducts(List<List<ProductsRp>> products) {
+    List<ProductsRp> restOfTheItems = [];
+    products[0].asMap().forEach((i, value) {
+      if(i > 5) {
+        restOfTheItems.add(value);
+      }
+    });
+    return restOfTheItems;
   }
 }

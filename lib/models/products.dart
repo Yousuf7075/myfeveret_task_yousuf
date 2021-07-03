@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-List<List<Products>> productsFromJson(String str) => List<List<Products>>.from(json.decode(str).map((x) => List<Products>.from(x.map((x) => Products.fromJson(x)))));
+List<List<ProductsRp>> productsFromJson(String str) => List<List<ProductsRp>>.from(json.decode(str).map((x) => List<ProductsRp>.from(x.map((x) => ProductsRp.fromJson(x)))));
 
-String productsToJson(List<List<Products>> data) => json.encode(List<dynamic>.from(data.map((x) => List<dynamic>.from(x.map((x) => x.toJson())))));
+String productsToJson(List<List<ProductsRp>> data) => json.encode(List<dynamic>.from(data.map((x) => List<dynamic>.from(x.map((x) => x.toJson())))));
 
-class Products {
-  Products({
+class ProductsRp {
+  ProductsRp({
     this.storyTime,
     this.story,
     this.storyType,
@@ -61,7 +61,7 @@ class Products {
   String friendlyTimeDiff;
   String slNo;
 
-  factory Products.fromJson(Map<String, dynamic> json) => Products(
+  factory ProductsRp.fromJson(Map<String, dynamic> json) => ProductsRp(
     storyTime: json["storyTime"] == null ? null : DateTime.parse(json["storyTime"]),
     story: json["story"] == null ? null : json["story"],
     storyType: json["storyType"] == null ? null : json["storyType"],
