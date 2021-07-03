@@ -40,7 +40,9 @@ class ProductCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        productsRp.companyName !=null ? productsRp.companyName: "null",
+                        productsRp.companyName != null
+                            ? productsRp.companyName
+                            : "No Name",
                         maxLines: 1,
                         style: productNameTextStyle(),
                       ),

@@ -66,16 +66,19 @@ class TrendingSellerCard extends StatelessWidget {
                 right: 0,
                 child: Container(
                   padding:
-                      EdgeInsets.only(left: 5, right: 5, top: 8, bottom: 8),
+                      EdgeInsets.only(left: 5, right: 5, top: 6, bottom: 6),
                   decoration: BoxDecoration(color: Colors.black26),
                   child:  Wrap(
                     children: [
-                      Text(
-                        trendingSellerRp.sellerName,
-                        style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 12,
-                            color: Colors.white),
+                      Container(
+                        child: Text(
+                          trendingSellerRp.sellerName,
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12,
+                              color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
