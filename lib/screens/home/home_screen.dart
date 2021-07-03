@@ -4,6 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_bloc.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_event.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_state.dart';
+import 'package:myfeveret_task_yousuf/screens/home/widgets/new_arrivals.dart';
+import 'package:myfeveret_task_yousuf/screens/home/widgets/new_shops.dart';
+import 'package:myfeveret_task_yousuf/screens/home/widgets/trending_products.dart';
 import 'package:myfeveret_task_yousuf/screens/home/widgets/trending_seller.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -49,17 +52,19 @@ class _HomeScreenState extends State<HomeScreen> {
           if (state is HomeLoaded) {
             return Container(
               margin: EdgeInsets.all(5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //Text('trending seller length->${state.treadingSellers[0].length}'),
-                  TrendingSeller(trendingSellers: state.treadingSellers[0],),
-                  SizedBox(height: 5,),
-                  Text('trending products length->${state.treadingProducts[0].length}'),
-                  Text('new arrivals length->${state.newArrivals[0].length}'),
-                  Text('new shops length->${state.newShops[0].length}'),
-                  Text('products length->${state.products[0].length}'),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TrendingSeller(trendingSellers: state.treadingSellers[0],),
+                    SizedBox(height: 5,),
+                    TrendingProducts(trendingProducts: state.treadingProducts[0],),
+                    SizedBox(height: 5,),
+                    NewArrivals(newArrivals: state.newArrivals[0],),
+                    SizedBox(height: 5,),
+                    NewShops(newShops: state.newShops[0],)
+                  ],
+                ),
               ),
             );
           }

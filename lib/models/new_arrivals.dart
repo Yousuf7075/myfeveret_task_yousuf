@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-List<List<NewArrivals>> newArrivalsFromJson(String str) => List<List<NewArrivals>>.from(json.decode(str).map((x) => List<NewArrivals>.from(x.map((x) => NewArrivals.fromJson(x)))));
+List<List<NewArrivalsRp>> newArrivalsFromJson(String str) => List<List<NewArrivalsRp>>.from(json.decode(str).map((x) => List<NewArrivalsRp>.from(x.map((x) => NewArrivalsRp.fromJson(x)))));
 
-String newArrivalsToJson(List<List<NewArrivals>> data) => json.encode(List<dynamic>.from(data.map((x) => List<dynamic>.from(x.map((x) => x.toJson())))));
+String newArrivalsToJson(List<List<NewArrivalsRp>> data) => json.encode(List<dynamic>.from(data.map((x) => List<dynamic>.from(x.map((x) => x.toJson())))));
 
-class NewArrivals {
-  NewArrivals({
+class NewArrivalsRp {
+  NewArrivalsRp({
     this.slNo,
     this.productName,
     this.shortDetails,
@@ -51,7 +51,7 @@ class NewArrivals {
   int defaultPushScore;
   String myProductVarId;
 
-  factory NewArrivals.fromJson(Map<String, dynamic> json) => NewArrivals(
+  factory NewArrivalsRp.fromJson(Map<String, dynamic> json) => NewArrivalsRp(
     slNo: json["slNo"] == null ? null : json["slNo"],
     productName: json["productName"] == null ? null : json["productName"],
     shortDetails: json["shortDetails"] == null ? null : json["shortDetails"],
