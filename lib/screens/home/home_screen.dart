@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_bloc.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_event.dart';
 import 'package:myfeveret_task_yousuf/bloc/home_state.dart';
+import 'package:myfeveret_task_yousuf/screens/home/widgets/trending_seller.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -47,11 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
           }
           if (state is HomeLoaded) {
             return Container(
+              margin: EdgeInsets.all(5),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('trending seller length->${state.treadingSellers[0].length}'),
+                  //Text('trending seller length->${state.treadingSellers[0].length}'),
+                  TrendingSeller(),
+                  SizedBox(height: 5,),
                   Text('trending products length->${state.treadingProducts[0].length}'),
                   Text('new arrivals length->${state.newArrivals[0].length}'),
                   Text('new shops length->${state.newShops[0].length}'),
