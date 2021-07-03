@@ -15,6 +15,7 @@ class NewShops extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 5.0,
       child: Container(
         height: 200,
         width: double.infinity,

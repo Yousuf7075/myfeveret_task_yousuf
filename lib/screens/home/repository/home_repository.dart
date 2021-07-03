@@ -10,7 +10,6 @@ import 'package:path_provider/path_provider.dart';
 class HomeRepository {
 
   Future getTrendingSellers() async {
-    print("fetch trending seller...");
 
     String fileName = "trending_seller.json";
     var dir = await getTemporaryDirectory();
@@ -190,7 +189,6 @@ dynamic _returnResponse(http.Response response) {
   switch (response.statusCode) {
     case 200:
       var responseJson = response.body;
-      print(responseJson);
       return responseJson;
     case 400:
       throw BadRequestException(response.body);
